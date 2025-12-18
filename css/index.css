@@ -2,3 +2,18 @@
     color: #dc5237;
 }
 
+.product-grid {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-style {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about-pic {
+    align-items: center;
+    vertical-align: middle ;
+    border-radius: 20px;
+}

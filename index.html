@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Order</title>
+    <title>Order Now</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/" />
     <script src="./assets/js/color-modes.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,9 +30,9 @@
                     <img src="./images/hotchicken.png" alt="logo" height=100> </a> </div>
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="#" class="nav-link px-2 link-secondary">Menu</a></li>
-                <li><a href="#" class="nav-link px-2">Location</a></li>
-                <li><a href="#" class="nav-link px-2">About</a></li>
-                
+                <li><a href="./location.html" class="nav-link px-2">Location</a></li>
+                <li><a href="./about.html" class="nav-link px-2">About</a></li>
+
             </ul>
             <div class="col-md-3 text-end">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
@@ -40,53 +40,63 @@
                     <path
                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                 </svg>
-                <a href="./login.html"><button type="button" class="btn btn-primary" style="background-color: #dc5237; border: none;">Login</button></a>
+                <a href="./login.html"><button type="button" class="btn btn-primary"
+                        style="background-color: #dc5237; border: none;">Login</button></a>
             </div>
         </header>
 
     </div>
 
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 200px;"> <a href="/"
-            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg
-                class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <svg
-                            class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-                            <use xlink:href="#home"></use>
-                        </svg>
-                        Entrees
-                    </a> </li>
-                <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-                            aria-hidden="true">
-                            <use xlink:href="#speedometer2"></use>
-                        </svg>
-                        Sides
-                    </a> </li>
-                <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-                            aria-hidden="true">
-                            <use xlink:href="#table"></use>
-                        </svg>
-                        Drinks
-                    </a> </li>
-                <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-                            aria-hidden="true">
-                            <use xlink:href="#grid"></use>
-                        </svg>
-                        Desserts
-                    </a> </li>
-                <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
-                            aria-hidden="true">
-                            <use xlink:href="#people-circle"></use>
-                        </svg>
-                        Sauces
-                    </a> </li>
-            </ul>
-            <hr>
+    <div class="d-flex">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 200px;"> <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg
+                    class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <svg
+                                class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            Entrees
+                        </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+                                aria-hidden="true">
+                                <use xlink:href="#speedometer2"></use>
+                            </svg>
+                            Sides
+                        </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+                                aria-hidden="true">
+                                <use xlink:href="#table"></use>
+                            </svg>
+                            Drinks
+                        </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+                                aria-hidden="true">
+                                <use xlink:href="#grid"></use>
+                            </svg>
+                            Desserts
+                        </a> </li>
+                    <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+                                aria-hidden="true">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Sauces
+                        </a> </li>
+                </ul>
+                <hr>
 
+
+        </div>
+        
+        <div id="js-menu-grid" class = "product-grid">
+            
+        </div>
     </div>
+
+    <script src="./js/menuItems.js"></script>
 </body>
 
 </html>
