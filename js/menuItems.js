@@ -43,7 +43,7 @@ const product = [{
 }, {
     name: 'Mashed Potatoes',
     type: 'side',
-    image: './images/chicken-sandwich.png',
+    image: './images/mashed-potatoes.png',
     description: 'Mashed potatoes and gravy',
     price: '299'
 }, {
@@ -105,7 +105,7 @@ for (const [type, title] of Object.entries(categories)) {
         
         typeProducts.forEach((product) => {
             productHTML += `
-            <a><div class = "product-items">
+            <a class = "js-add-to-cart" data-product-name = "${product.name}"><div class = "product-items">
                 <img src="${product.image}" alt="${product.name}" style="width: 120px; height: 100%; object-fit: cover;">
                 <div style="padding: 5px; background-color: #dc5237; flex: 1; display: flex; flex-direction: column;">
                     <p style="margin: 0; font-size: 15px; font-weight: bold;">${product.name}</p>
@@ -124,4 +124,36 @@ for (const [type, title] of Object.entries(categories)) {
 
 
 document.getElementById('js-menu-grid').innerHTML = productHTML
+
+const productButton = document.querySelectorAll(".js-add-to-cart")
+    
+productButton.forEach((link) => {
+    
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const productName = link.dataset.productName;
+
+        let matchingItem;
+
+        cart.forEach((item) => {
+            if (productName === item.productName) {
+                matchingItem = item;
+            }
+        });
+
+        if (matchingItem) {
+            matchingItem.quantity ++;
+        } else {
+            cart.push({
+                productName: productName,
+                quantity: 1
+        })
+        }
+
+        
+        console.log(cart)
+    })
+
+})
+
 

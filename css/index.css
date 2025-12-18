@@ -33,3 +33,8 @@
 .product-items:hover {
     cursor: pointer;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
