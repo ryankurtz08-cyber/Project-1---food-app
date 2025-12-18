@@ -153,7 +153,8 @@ productButton.forEach((link) => {
         cart.forEach((item) => {
             cartQuantity += item.quantity;
         })
-        alert(cartQuantity)
+        
+        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
     })
 
 })
