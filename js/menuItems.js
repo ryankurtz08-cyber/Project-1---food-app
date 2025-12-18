@@ -105,23 +105,15 @@ for (const [type, title] of Object.entries(categories)) {
         
         typeProducts.forEach((product) => {
             productHTML += `
-            <div style="
-                display: flex;
-                border: none;
-                border-radius: 15px;
-                background-color: white;
-                width: 100%;
-                min-height: 120px;
-                overflow: hidden;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
-                ">
+            <a><div class = "product-items">
                 <img src="${product.image}" alt="${product.name}" style="width: 120px; height: 100%; object-fit: cover;">
-                <div style="padding: 5px; background-color: #dc5237; flex: 1;">
-                    <h5 style="margin: 0;">${product.name}</h5>
+                <div style="padding: 5px; background-color: #dc5237; flex: 1; display: flex; flex-direction: column;">
+                    <p style="margin: 0; font-size: 15px; font-weight: bold;">${product.name}</p>
                     <p style="margin-top: 0; font-size: 12px;">${product.description}</p>
-                    <strong style="font-size: 14px;">$${product.price / 100}</strong>
+                    <strong style="font-size: 14px; margin-top: auto; align-self: flex-end;">$${product.price / 100}</strong>
                 </div>
             </div>
+            </a>
             `;
         });
         
