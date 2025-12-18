@@ -1,7 +1,7 @@
 export const cart = [];
 
 export function addToCart(productName) {
-            let matchingItem;
+                let matchingItem;
 
                 cart.forEach((cartItem) => {
                     if (productName === cartItem.productName) {
@@ -17,5 +17,5 @@ export function addToCart(productName) {
                         quantity: 1
                 })
                 }
-                console.log()
+                console.log(cart)
 }

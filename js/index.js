@@ -1,5 +1,5 @@
 import {cart, addToCart} from './cart.js'
-import { product } from './menuItems.js';
+import {product} from './menuItems.js';
 
 let productHTML = '';
 
@@ -21,7 +21,7 @@ for (const [type, title] of Object.entries(categories)) {
         
         typeProducts.forEach((product) => {
             productHTML += `
-            <a class = "js-add-to-cart" data-product-name = "${product.name}"><div class = "product-items">
+            <a class = "js-add-to-cart" data-product-name = "${product.name}"><div class = "product-items" style="display: flex;">
                 <img src="${product.image}" alt="${product.name}" style="width: 120px; height: 100%; object-fit: cover;">
                 <div style="padding: 5px; background-color: #dc5237; flex: 1; display: flex; flex-direction: column;">
                     <p style="margin: 0; font-size: 15px; font-weight: bold;">${product.name}</p>
@@ -46,9 +46,10 @@ const productButton = document.querySelectorAll(".js-add-to-cart")
 
 function updateCartQuantity() {
     let cartQuantity = 0;
-        cartItem.forEach((cartItem) => {
+        cart.forEach((cartItem) => {
             cartQuantity += cartItem.quantity;
         })
+    return cartQuantity;
 }
 
 
@@ -59,7 +60,7 @@ productButton.forEach((link) => {
         const productName = link.dataset.productName;
 
         addToCart(productName);
-        updateCartQuantity();
+        const cartQuantity = updateCartQuantity();
         
         document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
     })
