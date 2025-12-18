@@ -93,3 +93,7 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
 }
+
+.btn {
+    margin-bottom: 4px;
+}

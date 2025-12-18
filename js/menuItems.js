@@ -1,3 +1,5 @@
+import {cart} from './cart.js'
+
 const product = [{
     name: 'Nashville Hot Chicken Sandwich',
     type: 'entree',
