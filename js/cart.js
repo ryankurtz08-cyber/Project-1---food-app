@@ -1,3 +1,4 @@
+
 export const cart = [];
 
 export function addToCart(productName) {
