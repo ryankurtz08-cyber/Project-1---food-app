@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="./css/index.css">
 
     <style>
-
+    
+    
     </style>
 
 </head>
@@ -52,37 +53,49 @@
 
 
 
-    <div class="container-fluid">
-        <div class="row">
-
-            <div id="checkout-items" class="col-8">
-
-            </div> <br><br>
-
-
-
-            <div class="payment-summary sticky-top">
-                <div class="payment-title">
-                    <H3>Review Your Order</H3>
-                </div>
-                <div class="subtotal-line">
-                    <div>Subtotal</div>
-                    <div>$9.99</div>
-                </div>
-                <div class="taxes-line">
-                    <div>Taxes and Fees (8.72%)</div>
-                    <div>$0.87</div>
-                </div>
-                <hr>
-                <div class="total-due">
-                    <div>Amount Due</div>
-                    <div>10.86</div>
-                </div>
-
-
+    <div class="container">
+        <div class="row g-4">
+            <!-- Left: cart items (on small screens these will appear after the summary) -->
+            <div class="col-12 col-md-8 order-last order-md-first">
+                <section id="checkout-items">
+                    <!-- Cart item list will be injected here -->
+                </section>
             </div>
+
+            <aside class="col-12 col-md-4 order-first order-md-last">
+                <div class="payment-summary">
+                    <div class="payment-title">
+                        <h3>Review Your Order</h3>
+                    </div>
+                    <div class="subtotal-line d-flex justify-content-between">
+                        <div>Subtotal</div>
+                        <div>$9.99</div>
+                    </div>
+                    <div class="taxes-line d-flex justify-content-between">
+                        <div>Taxes and Fees (8.72%)</div>
+                        <div>$0.87</div>
+                    </div>
+                    <hr>
+                    <div class="total-due d-flex justify-content-between fw-bold">
+                        <div>Amount Due</div>
+                        <div>$10.86</div>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button id="pay-now" class="btn btn-success btn-lg">Pay Now</button>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
+
+    
+
+
+
+   
+
+
+
     <script type="module" src="./js/cart.js"></script>
 </body>
 

@@ -2,8 +2,9 @@
 
 
 
+/* Ensure checkout list uses full width of its column */
 #checkout-items {
-   
+    width: 100%;
 }
 
 .cart-item {
@@ -18,15 +19,15 @@
 }
 
 
+/* Payment summary: non-sticky by default (mobile), sticky on md+ via media query below */
 .payment-summary {
     border: 1px solid gray;
-    width: 350px;
-    display: inline-block;
+    display: block;
     border-radius: 6px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20px;
-    
+    background: transparent;
+    padding: 1rem;
+    width: 100%;
+    max-width: 360px;
 }
 
 .payment-title {
@@ -49,4 +50,35 @@
     display: grid;
     grid-template-columns: 1fr auto;
     margin: 5px;
+}
+
+    /* On small screens, keep summary static and put it above items via Bootstrap order utilities */
+    @media (max-width: 767.98px){
+        .payment-summary{ position: static; top: auto; max-width: 100%; }
+    }
+
+    /* On medium and up, make the payment summary sticky so it pins to the viewport */
+    @media (min-width: 768px){
+        .payment-summary{
+            position: sticky;
+            top: 100px; /* adjust to match header height */
+            z-index: 5;
+        }
+    }
+
+/* Pay Now button style - full width and spacing; keeps styling separate from cart items */
+#pay-now {
+    width: 100%;
+}
+
+.payment-summary .d-grid { /* ensure button sits nicely inside the summary */
+    margin-top: 0.75rem;
+}
+
+.deleteButton {
+    border: none;
+    background-color: rgb(244, 0, 0);
+    border-radius: 5px;
+    padding: 1px;
+    text-align: center;
 }
