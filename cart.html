@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#712cf9" />
     <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/index.css">
-    
+
     <style>
 
     </style>
@@ -37,12 +37,12 @@
 
             </ul>
             <div class="col-md-3 text-end">
-                <a href="./cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
-                    viewBox="0 0 16 16" style="margin-right: 15px;">
-                    <path
-                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                </svg></a>
-                <span id = "cart-quantity" class = "cart-quantity-number js-cart-quantity"></span>
+                <a href="./cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-cart3" viewBox="0 0 16 16" style="margin-right: 15px;">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg></a>
+                <span id="cart-quantity" class="cart-quantity-number js-cart-quantity"></span>
                 <a href="./login.html"><button type="button" class="btn btn-primary"
                         style="background-color: #dc5237; border: none;">Login</button></a>
             </div>
@@ -52,56 +52,38 @@
 
 
 
+    <div class="container-fluid">
+        <div class="row">
 
-    <div class="checkout-items">       
-            <div class="col-md-6 cart-item-checkout">
-                <div class="cart-item" >
-                    <img src="./images/chicken-sandwich.png" alt="Nashville Hot Chicken Sandwich" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
-                    <div class="item-details">
-                        <h4 style="margin: 0 0 5px 0;">Nashville Hot Chicken Sandwich</h4>
-                        <p style="margin: 0; font-weight: bold;">$9.99</p>
-                        <p>Quantity: 1</p>
-                        <p>delete</p>
-                    </div>
+            <div id="checkout-items" class="col-8">
+
+            </div> <br><br>
+
+
+
+            <div class="payment-summary sticky-top">
+                <div class="payment-title">
+                    <H3>Review Your Order</H3>
                 </div>
+                <div class="subtotal-line">
+                    <div>Subtotal</div>
+                    <div>$9.99</div>
+                </div>
+                <div class="taxes-line">
+                    <div>Taxes and Fees (8.72%)</div>
+                    <div>$0.87</div>
+                </div>
+                <hr>
+                <div class="total-due">
+                    <div>Amount Due</div>
+                    <div>10.86</div>
+                </div>
+
+
             </div>
-
-
-            <div class="col-md-6 cart-item-checkout">
-                <div class="cart-item" >
-                    <img src="./images/chicken-sandwich.png" alt="Nashville Hot Chicken Sandwich" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
-                    <div class="item-details">
-                        <h4 style="margin: 0 0 5px 0;">Nashville Hot Chicken Sandwich</h4>
-                        <p style="margin: 0; font-weight: bold;">$9.99</p>
-                        <p>Quantity: 1</p>
-                        <p>delete</p>
-                    </div>
-                </div>
-            </div>       
-    </div> <br><br>
-
-
-
-    <div class = "payment-summary">
-        <div class = "payment-title">
-            <H3>Review Your Order</H3>
         </div>
-        <div class = "subtotal-line">
-            <div>Subtotal</div>
-            <div>$9.99</div>
-        </div>
-        <div class = "taxes-line">
-            <div>Taxes and Fees (8.72%)</div>
-            <div>$0.87</div>
-        </div>
-        <hr>
-        <div class = "total-due">
-            <div>Amount Due</div>
-            <div>10.86</div>
-        </div>
-
-
     </div>
-
+    <script type="module" src="./js/cart.js"></script>
 </body>
+
 </html>

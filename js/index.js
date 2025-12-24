@@ -1,5 +1,5 @@
-import {cart, addToCart, saveToStorage} from './cart.js'
-import {product} from './menuItems.js';
+import { cart, addToCart, saveToStorage } from './cart.js'
+import { product } from './menuItems.js';
 
 let productHTML = '';
 
@@ -14,11 +14,11 @@ const categories = {
 
 for (const [type, title] of Object.entries(categories)) {
     const typeProducts = product.filter(item => item.type === type);
-    
+
     if (typeProducts.length > 0) {
         productHTML += `<h2 style="width: 100%; margin: 20px 0 10px 0;">${title}</h2>`;
         productHTML += `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; width: 100%;">`;
-        
+
         typeProducts.forEach((product) => {
             productHTML += `
             <a class = "js-add-to-cart" data-product-name = "${product.name}"><div class = "product-items" style="display: flex;">
@@ -32,7 +32,7 @@ for (const [type, title] of Object.entries(categories)) {
             </a>
             `;
         });
-        
+
         productHTML += `</div>`;
     }
 }
@@ -44,26 +44,30 @@ document.getElementById('js-menu-grid').innerHTML = productHTML
 const productButton = document.querySelectorAll(".js-add-to-cart")
 
 
-function updateCartQuantity() {
+function getCartQuantity() {
     let cartQuantity = 0;
-        cart.forEach((cartItem) => {
-            cartQuantity += cartItem.quantity;
-        })
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    })
     return cartQuantity;
 }
 
 
 productButton.forEach((link) => {
-    
+
     link.addEventListener('click', (event) => {
         event.preventDefault();
         const productName = link.dataset.productName;
 
         addToCart(productName);
-        const cartQuantity = updateCartQuantity();
-        
-        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-        
+        updateCartQuantity();
     })
 
 })
+
+function updateCartQuantity() {
+    const cartQuantity = getCartQuantity();
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
+updateCartQuantity();
