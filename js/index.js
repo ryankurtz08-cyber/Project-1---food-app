@@ -1,4 +1,4 @@
-import {cart, addToCart} from './cart.js'
+import {cart, addToCart, saveToStorage} from './cart.js'
 import {product} from './menuItems.js';
 
 let productHTML = '';
@@ -63,6 +63,7 @@ productButton.forEach((link) => {
         const cartQuantity = updateCartQuantity();
         
         document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+        
     })
 
 })

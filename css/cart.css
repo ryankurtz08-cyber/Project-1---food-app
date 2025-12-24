@@ -1,4 +1,52 @@
-.cart-item-checkout {
+
+
+
+
+.checkout-items {
+    display: block;
+}
+
+.cart-item {
     
-   
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    border: 1px solid gray;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.payment-summary {
+    border: 1px solid gray;
+    width: 350px;
+    display: inline-block;
+    border-radius: 6px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    
+}
+
+.payment-title {
+    margin: 5px;
+}
+
+.subtotal-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin:5px
+}
+
+.taxes-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 5px;
+}
+
+.total-due {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 5px;
 }
