@@ -16,7 +16,8 @@ for (const [type, title] of Object.entries(categories)) {
     const typeProducts = product.filter(item => item.type === type);
 
     if (typeProducts.length > 0) {
-        productHTML += `<h2 style="width: 100%; margin: 20px 0 10px 0;">${title}</h2>`;
+    
+    productHTML += `<h2 id="${title.toLowerCase()}" style="width: 100%; margin: 20px 0 10px 0;">${title}</h2>`;
         productHTML += `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; width: 100%;">`;
 
         typeProducts.forEach((product) => {
@@ -71,3 +72,14 @@ function updateCartQuantity() {
 }
 
 updateCartQuantity();
+
+document.querySelectorAll('.nav-link').
+    forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href')
+            const targetElement = document.querySelector(targetId)
+            targetElement.scrollIntoView();
+        })
+      
+        })
