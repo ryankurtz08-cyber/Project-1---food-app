@@ -26,7 +26,7 @@ for (const [type, title] of Object.entries(categories)) {
                 <img src="${product.image}" alt="${product.name}" style="width: 120px; height: 100%; object-fit: cover;">
                 <div style="padding: 5px; background-color: #dc5237; flex: 1; display: flex; flex-direction: column;">
                     <p style="margin: 0; font-size: 15px; font-weight: bold;">${product.name}</p>
-                    <p style="margin-top: 0; font-size: 12px;">${product.description}</p>
+                    <p style="margin-top: 0; font-size: 10px;">${product.description}</p>
                     <strong style="font-size: 14px; margin-top: auto; align-self: flex-end;">$${product.price / 100}</strong>
                 </div>
             </div>
