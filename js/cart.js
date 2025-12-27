@@ -36,13 +36,13 @@ function cartCheckout() {
         document.getElementById("checkout-items")
             .innerHTML += `
             <div class="col-md-6 cart-item-checkout">
-                <div class="cart-item" >
+                <div class="cart-item">
                     <img src="${p.image}" alt="Nashville Hot Chicken Sandwich" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
                     <div class="item-details">
                         <h4 style="margin: 0 0 5px 0;">${p.name}</h4>
                         <p style="margin: 0; font-weight: bold;">$${p.price / 100}</p>
                         <p>Quantity: ${cart.quantity}</p>
-                        <button id = "delete-button" class = "deleteButton">delete</button>
+                        <button id = "delete-button" class = "deleteButton" data-product-name="${(p.name).toLowerCase}">delete</button>
                     </div>
                 </div>
             </div>
@@ -57,11 +57,17 @@ if (window.location.href.endsWith('cart.html')) {
     cartCheckout();
 }
 
-
+//delete button
 document.querySelectorAll(".deleteButton").
     forEach((link) => {
         link.addEventListener('click', () => {
             const container = link.closest(".cart-item");
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            const nameDelete = link.dataset.productName.toLowerCase().trim();
+            const newCart = cart.filter((item) => {
+                return item.name !== nameDelete
+            })
+            localStorage.setItem('cart', JSON.stringify(newCart));
             container.remove();
         })
     })
