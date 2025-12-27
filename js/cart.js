@@ -41,7 +41,7 @@ function cartCheckout() {
                     <div class="item-details">
                         <h4 style="margin: 0 0 5px 0;">${p.name}</h4>
                         <p style="margin: 0; font-weight: bold;">$${p.price / 100}</p>
-                        <p>Quantity: ${cart.quantity}</p>
+                        <p>Quantity: ${cartItem.quantity}</p>
                         <button id = "delete-button" class = "deleteButton" data-product-name="${(p.name).toLowerCase()}">delete</button>
                     </div>
                 </div>
@@ -63,21 +63,47 @@ document.querySelectorAll(".deleteButton").
     forEach((link) => {
         link.addEventListener('click', () => {
             const container = link.closest(".cart-item");
-            const cart = JSON.parse(localStorage.getItem('cart'));
             const nameDelete = link.dataset.productName;
             const newCart = cart.filter((item) => {
                 return item.productName.toLowerCase() !== nameDelete
             })
             localStorage.setItem('cart', JSON.stringify(newCart));
+            cart = newCart;
             container.remove();
+            updateCartTotal();
         })
     })
 
 function findProduct(productName) {
     return product.find(p => {
         return (p.name === productName)
-
     })
 }
+
+function updateCartTotal() {
+   
+    let subtotal = 0;
+    cart.forEach((cartItem) => {
+        const p = findProduct(cartItem.productName)
+        subtotal += ((p.price * cartItem.quantity) / 100)
+    });
+    const subtotalElement = document.getElementById('subtotal-line');
+    if (subtotalElement) {
+        subtotalElement.innerHTML = `$${subtotal.toFixed(2)}`;
+    }
+
+    let taxes = subtotal * .0872;
+    const taxesElement = document.getElementById('taxes-line')
+    if (taxesElement) {
+        taxesElement.innerHTML = `$${taxes.toFixed(2)}`;
+    }
+
+    let totalDue = subtotal + taxes;
+    const totalElement = document.getElementById('total-due')
+    if (totalElement) {
+        totalElement.innerHTML = `$${totalDue.toFixed(2)}`;
+    }
+}
+updateCartTotal();
 
 

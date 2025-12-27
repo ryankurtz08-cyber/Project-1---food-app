@@ -73,7 +73,7 @@ function updateCartQuantity() {
 
 updateCartQuantity();
 
-document.querySelectorAll('.nav-link').
+document.querySelectorAll('.menu-category').
     forEach((link) => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
